@@ -19,24 +19,15 @@ function checkRequired(){
     }else if(!validateEmail(email) || email == ""){
         alert("email is required");
         return false;
-    }else if(validateNumber(phoneNumber)|| phoneNumber ==""){
-        alert("phone number is incorrect");
+    }else if(!phoneNumber.startsWith("+358") || phoneNumber ==""){
+        alert("phone number is incorrect(need to start with +358)");
         return false;
-    }else if(password == ""|| password >= 15){
-        alert("set password");
+    }else if(password == "" || !password.lenght > 5){
+        alert("set password(over 5 letters)");
         return false;
-    }else if(adress != ""){
-        if(!validate(adress)){
-        alert("some")
+    }else if(!postalc != "" && postalc.lenght > 5){
+        alert("Postal code must have 5 characters!");
         return false;
-        }
-       
-    }else if(postalc != ""){
-        if(!validate(postalc)){
-        alert("some")
-        return false;
-        }
-       
     }
     
 }
@@ -49,7 +40,3 @@ function validate(string){
     var noSpe = /^[a-zA-Z]*$/;
     return noSpe.test(string);
 }
-function validateNumber(phone){
-    var noSpe = /{+358}{3}/;
-    return noSpe.test(phone);
-  }
