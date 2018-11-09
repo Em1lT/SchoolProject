@@ -1,8 +1,9 @@
 
-const showImages= (images)=>    {
-
-    
-  
+const showImages= (images)=>{
+    const ul = document.querySelector('ul')
+    images.forEach((image) => {
+        
+   
     const li = document.createElement('li');
     const h3 = document.createElement('h3');
     const figcaption = document.createElement('figcaption');
@@ -18,8 +19,15 @@ const showImages= (images)=>    {
     figure.appendChild(a);
     figure.appendChild(figcaption);
     li.appendChild(figure);
-    document.querySelector('ul').appendChild(li);
+    ul.appendChild(li);
 
+});
+};
 
-}
-showImages();
+fetch('images.json')
+.then((response) => {
+  return response.json();
+})
+.then((json) => {
+  showImages(json);
+});
