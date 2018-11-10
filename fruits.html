@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul class="fruits">
+        <li>Apple</li>
+        <li>Banana</li>
+        <li data-foodtype="squishy">Orange</li>
+        <li>Pear</li>
+        <li>Kiwi</li>
+        <li id="berry">Strawberry</li>
+    </ul>
+
+    <script>
+        //1
+        const strawberry = document.getElementById("berry").innerHTML;
+        document.getElementById("berry").style.backgroundColor="red";
+        console.log(berry);
+        console.log("i found the berry: " + strawberry);
+        //2
+        const orange = document.querySelector("[data-foodtype]").innerHTML;
+        document.querySelector("[data-foodtype]").style.backgroundColor = "orange";
+        console.log(orange);
+        console.log("I found the fruit: " + orange);
+        //3.1
+        const elements = document.getElementsByTagName("li");
+        console.log(elements);
+        //3.2    
+        var i;
+        for (i = 0; i < elements.length; i++) {
+            console.log(elements[i].innerHTML);        
+            document.getElementsByTagName("li")[i].style.width = "100px";
+            document.getElementsByTagName("li")[i].style.listStyle = "none";
+            if (elements[i].innerHTML == "Pear") {          
+                elements[i].style.backgroundColor = "green";
+            }
+        }
+        //4.1
+        const nodelist = document.querySelectorAll("li");
+        console.log(nodelist);
+        //4.2
+        Array.from(nodelist).forEach((list) => {
+            console.log(list.innerHTML);
+            list.style.border = "1px solid black";
+        });
+
+
+
+    </script>
+</body>
+
+</html>
