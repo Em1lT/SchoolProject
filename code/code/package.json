@@ -1,0 +1,11 @@
+{
+  "name": "upload",
+  "version": "1.0.0",
+  "description": "upload",
+  "main": "index.js",
+  "scripts": {
+    start: "app.js"
+  },
+  "author": "",
+  "license": "ISC"
+}
