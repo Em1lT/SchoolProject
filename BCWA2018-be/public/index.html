@@ -3,9 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <style>
+
+    </style>
 </head>
 <body>
 <h1>HTML PAGE</h1>
+  <h2>Login</h2>
+<form action="login" method="post">
+    <input type="text" name="username" placeholder="Smeagol">
+    <input type="text" name="password" placeholder="****">
+    <input type="submit" value="Login">
+</form>
+<br>
+<br>
 <form action="/upload" method="post" enctype="multipart/form-data" id="mediaform">
     <input type="text" name="category" placeholder="Category">
     <br>
@@ -19,12 +30,38 @@
     <br>
     <button type="submit">Submit</button>
 </form>
+<button type="something" id="som">do something</button>
+<h1>Update Image</h1>
+<form action="/update" id="updateform">
+    <input type="text" name="category" placeholder="Category">
+    <br>
+    <input type="text" name="title" placeholder="Title">
+    <br>
+    <input type="text" name="details" placeholder="Details">
+    <br>
+    <input type="hidden" name="id">
+    <button type="submit" disabled>Submit</button>
+</form>
 <br>
-<div>
+<form action="/delete" id="deleteform">
+  <input type="hidden" name="id">
+  <button type="delete" id="but" disabled>delete</button>
+</form>
+
+<br><br>
+<form action="/search" id="searchform">
+  <input type="text" name="category" placeholder="Category">
+  <button type="submit">Submit</button>
+</form>
+
+<br>
+<div id="cent">
+    <ul id="imagelist">
+
+    </ul>
 </div>
-<div>
- <img>
-</div>
-<script src="./js/main.js"></script>
+<div class="flip-box">
+     
+<script src="js/main.js"></script>
 </body>
 </html>
